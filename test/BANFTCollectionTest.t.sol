@@ -85,6 +85,21 @@ contract BANFTCollectionTest is Test {
         nftCollection.tokenURI(0);
     }
 
+    /// @notice Should correctly generate the tokenURI for a fuzzing tokenUri
+    function testFuzz_tokenURI(uint256 tokenId) external {
+        vm.assume(tokenId < TOTAL_SUPPLY); 
+
+        vm.startPrank(user1);
+
+        for (uint256 i = 0; i <= tokenId; i++) {
+            nftCollection.mint();
+        }
+        string memory tokenURIExpected = string.concat(BASE_URI, tokenId.toString(), ".json");
+        string memory tokenURI = nftCollection.tokenURI(tokenId);
+        assertEq(tokenURI, tokenURIExpected); 
+
+        vm.stopPrank();
+    }
 }
 
 
