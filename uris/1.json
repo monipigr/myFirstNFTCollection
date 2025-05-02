@@ -1,0 +1,9 @@
+{
+  "name": "Blockchain Accelerator NFT 1",
+  "description": "First NFT Collection by monifly",
+  "image": "ipfs://bafybeihoafleos4qrjav73py2zd5h4bnt2brbyfksq7xgulvgvvlqffyae",
+  "attributes": {
+    "trait_type": "Rarity",
+    "value": "1"
+  }
+}
